@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BonoBiz</title>
+  <link rel="stylesheet" href="indexstyle.css">  
+</head>
+<body>
+
+  <div id="navbar"></div>
+
+
+  <main>
+    <h1>Welcome to BonoBiz</h1>
+    <h3>Get Quizzical, Stay Brilliant</h3>
+    <p>Your ultimate Quiz Source. Ready to challenge yourself?</p>
+    <button id="startQuizBtn">Take a Quiz</button>
+  </main>
+
+  <script>
+    document.getElementById('startQuizBtn').addEventListener('click', () => {
+      window.location.href = 'quiz.html';
+    });
+  </script>
+      <script>
+    // Load navbar.html content into #navbar div
+    fetch('navbar.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('navbar').innerHTML = data);
+  </script>
+  
+</body>
+</html>

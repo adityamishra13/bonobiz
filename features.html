@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="featurestyle.css" />
+  <title>Features - BonoBiz</title>
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main style="margin-top: 100px;">
+    <div class="intro-text">
+      <h1>Why Choose BonoBiz?</h1>
+      <p>
+        BonoBiz is your ultimate destination for smart, customizable, and fun quizzes. Whether you're a Geek or a Movie Freak,
+        BonoBiz has the tools to keep you sharp and engaged.
+      </p>
+    </div>
+
+<section>
+  <h2>Key Features</h2>
+  <div class="features-grid">
+    <div class="feature-box">
+      <strong>Large Set of Questions:</strong>
+      <p>Ever-growing database across various categories and difficulties.</p>
+    </div>
+    <div class="feature-box">
+      <strong>Customizable Quizzes:</strong>
+      <p>Build your own quizzes tailored to specific topics or needs.</p>
+    </div>
+    <div class="feature-box">
+      <strong>Free:</strong>
+      <p>Free access to everyone.</p>
+    </div>
+    <div class="feature-box">
+      <strong>Boost Your Knowledge:</strong>
+      <p>Learn new facts and concepts while enjoying the challenge.</p>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <script>
+    // Load navbar.html content into #navbar div
+    fetch('navbar.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('navbar').innerHTML = data);
+  </script>
+</body>
+</html>
