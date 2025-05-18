@@ -12,7 +12,6 @@ let selectedAnswer = null;
 form.addEventListener("submit", e => {
   e.preventDefault();
 
-  // Build URL based on form inputs
   const amount = form.amount.value;
   const category = form.category.value;
   const difficulty = form.difficulty.value;
@@ -21,7 +20,7 @@ form.addEventListener("submit", e => {
 
   if (category) apiUrl += `&category=${category}`;
   if (difficulty) apiUrl += `&difficulty=${difficulty}`;
-  apiUrl+='&type=multiple';
+  apiUrl += '&type=multiple';
 
   fetchQuiz(apiUrl);
 });
@@ -30,7 +29,7 @@ async function fetchQuiz(url) {
   try {
     const res = await fetch(url);
     const data = await res.json();
-    if(data.response_code !== 0 || !data.results.length) {
+    if (data.response_code !== 0 || !data.results.length) {
       alert("No questions found for this selection. Try different options.");
       return;
     }
@@ -71,14 +70,14 @@ function showQuestion() {
     optionsContainer.appendChild(btn);
   });
 
-  if(currentQuestionIndex==questions.length-1){
-    nextBtn.innerText="Submit"
+  if (currentQuestionIndex == questions.length - 1) {
+    nextBtn.innerText = "Submit"
   }
 
 }
 
 function selectAnswer(button, answer, correctAnswer) {
-  if (selectedAnswer) return; // only allow one selection
+  if (selectedAnswer) return;
 
   selectedAnswer = answer;
   nextBtn.disabled = false;
@@ -87,12 +86,11 @@ function selectAnswer(button, answer, correctAnswer) {
 
   Array.from(optionsContainer.children).forEach(btn => {
     btn.disabled = true;
-    // Replace these styles inside selectAnswer()
-if (btn.innerHTML === decodeHTML(correctAnswer)) {
-  btn.classList.add("correct");
-} else if (btn !== button) {
-  btn.classList.add("incorrect");
-}
+    if (btn.innerHTML === decodeHTML(correctAnswer)) {
+      btn.classList.add("correct");
+    } else if (btn !== button) {
+      btn.classList.add("incorrect");
+    }
 
   });
 
@@ -101,13 +99,9 @@ if (btn.innerHTML === decodeHTML(correctAnswer)) {
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
-  document.querySelector('form').style.display = 'none'; // Hide the heading
+  document.querySelector('form').style.display = 'none';
+  document.querySelector('h4').style.display = 'none';
 
-  document.querySelector('h4').style.display = 'none'; // Hide the heading
-  
-  
-  
-  // fetch questions and show quiz
   quizContainer.style.display = 'block';
 });
 
@@ -129,7 +123,6 @@ function showScore() {
   optionsContainer.innerHTML = "";
   nextBtn.style.display = "none";
 
-  // Restart Quiz Button
   const restartBtn = document.createElement("button");
   restartBtn.textContent = "Restart Quiz";
   restartBtn.style.marginTop = "20px";
@@ -154,12 +147,11 @@ function showScore() {
     form.style.display = "block";
     quizContainer.style.display = "none";
     nextBtn.style.display = "inline-block";
-    nextBtn.innerText="Next"
+    nextBtn.innerText = "Next"
     form.reset();
   });
   optionsContainer.appendChild(restartBtn);
 
-  // Leave Quiz Button
   const leaveBtn = document.createElement("button");
   leaveBtn.textContent = "Leave Quiz";
   leaveBtn.style.marginTop = "15px";
@@ -181,12 +173,11 @@ function showScore() {
     leaveBtn.style.boxShadow = "0 6px 12px rgba(220, 53, 69, 0.4)";
   };
   leaveBtn.addEventListener("click", () => {
-    window.location.href = "index.html"; // Change this if your home page is different
+    window.location.href = "index.html";
   });
   optionsContainer.appendChild(leaveBtn);
 }
 
-// Utility functions
 function shuffleArray(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));

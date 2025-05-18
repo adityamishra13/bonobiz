@@ -1,8 +1,8 @@
 * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -25,7 +25,8 @@ h4 {
   color: #14bbbb;
 }
 
-form, #quiz-container {
+form,
+#quiz-container {
   background-color: #1e2a38;
   padding: 30px;
   border-radius: 16px;
@@ -36,8 +37,15 @@ form, #quiz-container {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 label {
@@ -47,7 +55,8 @@ label {
   color: #00ffff;
 }
 
-select, input[type=number] {
+select,
+input[type=number] {
   width: 100%;
   padding: 10px;
   font-size: 16px;
@@ -58,7 +67,8 @@ select, input[type=number] {
   transition: background 0.3s;
 }
 
-select:focus, input:focus {
+select:focus,
+input:focus {
   outline: none;
   background: #415b76;
 }
@@ -86,64 +96,60 @@ button:disabled {
 }
 
 #question {
-    display: block;
-    margin: 15px 0 5px;
-    font-weight: 600;
-    color: #00ffff;
+  display: block;
+  margin: 15px 0 5px;
+  font-weight: 600;
+  color: #00ffff;
 }
+
 #options button {
-    display: block;
-    width: 100%;
-    margin: 10px 0;
-    padding: 12px;
-    font-size: 16px;
-    border-radius: 10px;
-    border: none;
-    background-color: #324256;
-    color: #fff;
-    transition: all 0.3s ease;
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  background-color: #324256;
+  color: #fff;
+  transition: all 0.3s ease;
 }
-  
+
 #options button:hover {
-    background-color: #415b76;
+  background-color: #415b76;
 }
-  
-/* Selected option (before submission) */
+
 #options button.selected {
-    background: #007bff;
-    color: #fff;
-    font-weight: bold;
-    scale: 0.95;
+  background: #007bff;
+  color: #fff;
+  font-weight: bold;
+  scale: 0.95;
 }
-  
-/* Correct answer (after submission) */
+
 #options button.correct {
-    background: #28a745;
-    color: #fff;
-    font-weight: bold;
+  background: #28a745;
+  color: #fff;
+  font-weight: bold;
 }
-  
-/* Incorrect answer (after submission) */
+
 #options button.incorrect {
-    background: #dc3545;
-    color: #fff;
-    font-weight: bold;
-    opacity: 0.8;
-    scale: 0.9;
+  background: #dc3545;
+  color: #fff;
+  font-weight: bold;
+  opacity: 0.8;
+  scale: 0.9;
 }
 
-/* When an incorrect option is selected */
 #options button.selected.incorrect {
-    background: #dc3545;
-    color: #fff;
-    font-weight: bold;
+  background: #dc3545;
+  color: #fff;
+  font-weight: bold;
 }
 
-/* When correct option is selected */
 #options button.selected.correct {
-    background: #28a745;
-    color: #fff;
-    font-weight: bold;
+  background: #28a745;
+  color: #fff;
+  font-weight: bold;
 }
 
 #quiz-container {

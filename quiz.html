@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Quiz</title>
   <link rel="stylesheet" href="quizstyle.css" />
 </head>
+
 <body>
   <div id="navbar"></div>
   <h4>From science to pop culture — create custom quizzes and put your knowledge to the ultimate test!</h4>
@@ -13,7 +15,7 @@
     <input type="number" id="amount" name="amount" min="1" max="50" value="10" required />
 
     <label for="category">Category:</label>
-    <select id="category" name="category" >
+    <select id="category" name="category">
       <option value="">Any Category</option>
       <option value="9">General Knowledge</option>
       <option value="10">Entertainment: Books</option>
@@ -42,7 +44,7 @@
     </select>
 
     <label for="difficulty">Difficulty:</label>
-    <select id="difficulty" name="difficulty" >
+    <select id="difficulty" name="difficulty">
       <option value="">Any Difficulty</option>
       <option value="easy">Easy</option>
       <option value="medium">Medium</option>
@@ -57,13 +59,14 @@
     <div id="options"></div>
     <button id="next" disabled>Next</button>
   </div>
-  
 
-  <script src="index.js"></script>  
+
+  <script src="index.js"></script>
   <script>
     fetch('navbar.html')
       .then(res => res.text())
       .then(data => document.getElementById('navbar').innerHTML = data);
   </script>
 </body>
+
 </html>
