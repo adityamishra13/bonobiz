@@ -16,12 +16,13 @@ body {
   align-items: center;
 }
 
-h1 {
+h4 {
   text-align: center;
+  width: 250px;
   margin-bottom: 30px;
   margin-right: 30px;
-  font-size: 2.5rem;
-  color: #00e6e6;
+  font-size: 1.2rem;
+  color: #14bbbb;
 }
 
 form, #quiz-container {

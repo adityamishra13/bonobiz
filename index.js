@@ -101,9 +101,12 @@ if (btn.innerHTML === decodeHTML(correctAnswer)) {
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
-  document.querySelector('h1').style.display = 'none'; // Hide the heading
   document.querySelector('form').style.display = 'none'; // Hide the heading
 
+  document.querySelector('h4').style.display = 'none'; // Hide the heading
+  
+  
+  
   // fetch questions and show quiz
   quizContainer.style.display = 'block';
 });
